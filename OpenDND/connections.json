@@ -1,0 +1,4 @@
+{
+  "DbConnection": "Server=localhost\\SQLEXPRESS;Database=Capstone;Trusted_Connection=True;",
+  "SentryIOToken": "https://866be6ed07064cd1a851aac4e6fff04b@sentry.io/1361921"
+}
