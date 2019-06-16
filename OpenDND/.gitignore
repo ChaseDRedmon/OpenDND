@@ -233,6 +233,8 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
+connections.json
+
 /OpenDND/dataprotection
 /OpenDND/logs
 

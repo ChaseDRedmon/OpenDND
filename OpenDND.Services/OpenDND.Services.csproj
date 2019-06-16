@@ -8,4 +8,8 @@
       <ProjectReference Include="..\OpenDND.Data\OpenDND.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Core" />
+    </ItemGroup>
+
 </Project>

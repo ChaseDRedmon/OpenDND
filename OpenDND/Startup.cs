@@ -39,11 +39,11 @@ namespace OpenDND
             {
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
-                app.UseHttpsRedirection();
             }
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            app.UseHttpsRedirection();
 
             app.UseMvc(routes =>
             {
@@ -51,6 +51,16 @@ namespace OpenDND
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+            
+            /*app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
+            {
+                builder.UseMvc(routes =>
+                {
+                    routes.MapSpaFallbackRoute(
+                        name: "spa-fallback",
+                        defaults: new { controller = "Home", action = "Index" });
+                });
+            });*/
 
             app.UseSpa(spa =>
             {

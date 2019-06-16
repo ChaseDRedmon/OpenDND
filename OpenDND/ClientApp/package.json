@@ -1,10 +1,11 @@
 {
-  "name": "client-app",
+  "name": "opendnd",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "watch": "vue-cli-service build --mode development --watch",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
