@@ -38,10 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="README.md" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\OpenDND.Data\OpenDND.Data.csproj" />
     <ProjectReference Include="..\OpenDND.Services\OpenDND.Services.csproj" />
   </ItemGroup>

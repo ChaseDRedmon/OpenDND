@@ -1,4 +1,4 @@
-namespace OpenDND.Data.Models.Core
+namespace OpenDND.Data.Models
 {
     public class OpenDNDConfig
     {

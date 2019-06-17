@@ -43,7 +43,7 @@ namespace OpenDND
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseMvc(routes =>
             {

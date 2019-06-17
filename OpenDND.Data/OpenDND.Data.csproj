@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <Folder Include="Migrations" />
+      <Folder Include="Models\Core" />
     </ItemGroup>
 
     <ItemGroup>
