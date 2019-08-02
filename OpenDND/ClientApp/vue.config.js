@@ -1,5 +1,5 @@
 ﻿// vue.config.js
 module.exports = {
-  outputDir: "../wwwroot/client-app/",
+  outputDir: "../wwwroot/ClientApp/",
   filenameHashing: false
 };

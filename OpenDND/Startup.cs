@@ -1,8 +1,20 @@
+using System;
+using System.IO;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using OpenDND.Configuration;
+using OpenDND.Data;
+using OpenDND.Data.Models;
+using OpenDND.Extensions;
+using OpenDND.Services.Handlers;
 using VueCliMiddleware;
 
 namespace OpenDND
@@ -19,6 +31,44 @@ namespace OpenDND
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add our config class to our configuration
+            services.Configure<OpenDNDConfig>(Configuration);
+
+            // Create and persist our data protection keys to a directory
+            services.AddDataProtection()
+                .PersistKeysToFileSystem(new DirectoryInfo(@"dataprotection"));
+            
+            // Add cookie authentication
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/api/unauthorized";
+                    //options.LogoutPath = "/logout";
+                    options.ExpireTimeSpan = new TimeSpan(7, 0, 0, 0);
+                });
+
+            // Add anti-forgery tokens
+            services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
+
+            // Add response compression
+            services.AddResponseCompression();
+
+            // Add a transient service to our static file configuration extension. This setups up anti-forgery
+            // This runs automatically
+            services.AddTransient<IConfigureOptions<StaticFileOptions>, StaticFilesConfiguration>();
+
+            // Add a transient service to our Config Validator. The config validator ensures that our parameters are set. 
+            // This runs automatically
+            services.AddTransient<IStartupFilter, OpenDNDConfigValidator>();
+            
+            // Create our database service context and tell the application to use SQL Server 
+            services.AddDbContext<OpenDNDContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetValue<string>(nameof(OpenDNDConfig.DbConnection)));
+            });
+
+            services.AddOpenDNDServices();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the React files will be served from this directory
@@ -41,6 +91,14 @@ namespace OpenDND
                 app.UseHsts();
             }
 
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            app.UseAuthentication();
+
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             //app.UseHttpsRedirection();
@@ -51,6 +109,8 @@ namespace OpenDND
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
+            
+            app.UseMvc();
             
             /*app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
             {

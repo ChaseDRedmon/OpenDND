@@ -13,7 +13,7 @@ namespace OpenDND.Data
         public OpenDNDContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<OpenDNDContext>();
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Capstone;Trusted_Connection=True;");
+            optionsBuilder.UseNpgsql("");
             return new OpenDNDContext(optionsBuilder.Options);
         }
     }

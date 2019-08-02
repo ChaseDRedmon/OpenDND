@@ -250,6 +250,12 @@ connections.json
 /OpenDND/OpenDND.Data/obj/
 /OpenDND/OpenDND.Data/bin/
 
+/OpenDND/OpenDND.Data/OpenDNDContextDesignFactory.cs
+
+
+
+
+
 /OpenDND/OpenDND/obj/
 /OpenDND/OpenDND/bin/
 
