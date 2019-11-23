@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace OpenDND.Data.Models.Core
+namespace OpenDND.Data.Models.DND
 {
-    public class ResultItems
+    public class FeatsResult
     {
         [JsonProperty("slug")]
         public string Slug { get; set; }
@@ -11,34 +11,31 @@ namespace OpenDND.Data.Models.Core
         [JsonProperty("name")]
         public string Name { get; set; }
         
-        [JsonProperty("type")]
-        public string Type { get; set; }
-        
         [JsonProperty("desc")]
         public string Desc { get; set; }
         
-        [JsonProperty("rarity")]
-        public string Rarity { get; set; }
+        [JsonProperty("prerequisite")]
+        public string Prerequisite { get; set; }
         
-        [JsonProperty("requires_attunement")]
-        public string RequiresAttunement { get; set; }
-        
-        [JsonProperty("document_slug")]
+        [JsonProperty("document__slug")]
         public string DocumentSlug { get; set; }
+        
+        [JsonProperty("document__title")]
+        public string DocumentTitle { get; set; }
     }
 
-    public class RootItems
+    public class FeatsRootObject
     {
         [JsonProperty("count")]
         public int Count { get; set; }
         
         [JsonProperty("next")]
-        public string Next { get; set; }
+        public object Next { get; set; }
         
         [JsonProperty("previous")]
-        public string Previous { get; set; }
+        public object Previous { get; set; }
         
         [JsonProperty("results")]
-        public List<ResultItems> Results { get; set; }
+        public List<FeatsResult> Results { get; set; }
     }
 }

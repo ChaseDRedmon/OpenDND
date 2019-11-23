@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace OpenDND.Data.Models.Core
+namespace OpenDND.Data.Models.DND
 {
     public class SpeedMonsters
     {

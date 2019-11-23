@@ -1,6 +1,9 @@
 using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+
+using OpenDND.Data.Models.Core;
+using OpenDND.Data.Models.DND;
 using OpenDND.Data.Utilities;
 
 namespace OpenDND.Data
@@ -14,6 +17,14 @@ namespace OpenDND.Data
         public OpenDNDContext()
         {
         }
+        
+        public DbSet<RootItems> Items { get; set; }
+        
+        public DbSet<RootMonsters> RootMonsters { get; set; }
+        
+        public DbSet<RootSpells> Roles { get; set; }
+        
+        public DbSet<User> Users { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
