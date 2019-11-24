@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace OpenDND.Data.Models.DND
 {
-    public class ResultSpells
+    public class SpellsResults
     {
         [JsonProperty("slug")]
         public string Slug { get; set; }
@@ -60,7 +60,7 @@ namespace OpenDND.Data.Models.DND
         public string DocumentSlug { get; set; }
     }
 
-    public class RootSpells
+    public class SpellsRootObject
     {
         [JsonProperty("count")]
         public int Count { get; set; }
@@ -72,6 +72,6 @@ namespace OpenDND.Data.Models.DND
         public string PreviousPage { get; set; }
         
         [JsonProperty("results")]
-        public List<ResultSpells> Results { get; set; }
+        public List<SpellsResults> Results { get; set; }
     }
 }

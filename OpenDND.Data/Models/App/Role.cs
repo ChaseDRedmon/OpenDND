@@ -1,8 +1,9 @@
-namespace OpenDND.Data.Models.Core
+namespace OpenDND.Data.Models.App
 {
-    public static class Role
+    public enum Role
     {
-        public const string Admin = "Admin";
-        public const string User = "User";
+        Admin,
+        Owner,
+        Player
     }
 }

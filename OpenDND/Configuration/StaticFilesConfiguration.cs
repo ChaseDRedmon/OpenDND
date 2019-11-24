@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
 namespace OpenDND.Configuration
@@ -9,9 +10,9 @@ namespace OpenDND.Configuration
     public class StaticFilesConfiguration : IConfigureOptions<StaticFileOptions>
     {
         private readonly IAntiforgery _antiforgery;
-        private readonly IHostingEnvironment _env;
+        private readonly IWebHostEnvironment _env;
 
-        public StaticFilesConfiguration(IAntiforgery antiforgery, IHostingEnvironment env)
+        public StaticFilesConfiguration(IAntiforgery antiforgery, IWebHostEnvironment env)
         {
             _antiforgery = antiforgery;
             _env = env;

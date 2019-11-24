@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using OpenDND.Data.Models.Core;
 using OpenDND.Services.Core;
 
 namespace OpenDND.Services.Handlers
@@ -53,7 +52,7 @@ namespace OpenDND.Services.Handlers
             }
 
             var claims = new[] { 
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                 new Claim(ClaimTypes.Name, user.Username),
             };
             

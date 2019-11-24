@@ -235,9 +235,15 @@ _Pvt_Extensions
 
 connections.json
 
+/OpenDND/bin/
+/OpenDND/obj/
+
 /OpenDND/dataprotection
 /OpenDND/logs
 
+/OpenDND/OpenDND.Data/obj/
+/OpenDND/OpenDND.Data/bin/
+
 /OpenDND/OpenDND.Data.Tests/obj/
 /OpenDND/OpenDND.Data.Tests/bin/
 
@@ -246,42 +252,30 @@ connections.json
 
 /OpenDND/OpenDND.Services.Tests/obj/
 /OpenDND/OpenDND.Services.Tests/bin/
-
-/OpenDND/OpenDND.Data/obj/
-/OpenDND/OpenDND.Data/bin/
 
 /OpenDND/OpenDND.Data/OpenDNDContextDesignFactory.cs
 
-
-
-
-
 /OpenDND/OpenDND/obj/
 /OpenDND/OpenDND/bin/
-
-/OpenDND/bin/
-/OpenDND/obj/
-/OpenDND/OpenDND/bin/
-/OpenDND/OpenDND/obj/
 
 /OpenDND.Data/bin/
 /OpenDND.Data/obj/
-/OpenDND/OpenDND.Data/bin/
-/OpenDND/OpenDND.Data/obj/
 
 /OpenDND.Data.Tests/bin/
 /OpenDND.Data.Tests/obj/
-/OpenDND/OpenDND.Data.Tests/bin/
-/OpenDND/OpenDND.Data.Tests/obj/
 
 /OpenDND.Services/bin/
 /OpenDND.Services/obj/
-/OpenDND/OpenDND.Services/bin/
-/OpenDND/OpenDND.Services/obj/
 
 /OpenDND.Services.Tests/bin/
 /OpenDND.Services.Tests/obj/
-/OpenDND/OpenDND.Services.Tests/bin/
-/OpenDND/OpenDND.Services.Tests/obj/
+
+/OpenDND/OpenDND.Tests/bin/
+/OpenDND/OpenDND.Tests/obj/
+
+/OpenDND.Tests/bin/
+/OpenDND.Tests/obj/
+
+
 
 .idea/

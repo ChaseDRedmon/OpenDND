@@ -7,7 +7,6 @@ namespace OpenDND.Data.Repositories
     ///
     public class RepositoryBase
     {
-        
         public RepositoryBase(OpenDNDContext openDndContext)
         {
             OpenDndContext = openDndContext;
