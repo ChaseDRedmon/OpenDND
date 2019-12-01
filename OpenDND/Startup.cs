@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using OpenDND.Configuration;
+using OpenDND.Controllers;
 using OpenDND.Data;
 using OpenDND.Data.Models;
 using OpenDND.Extensions;
@@ -40,7 +41,7 @@ namespace OpenDND
             var connectionString = Configuration.GetValue<string>(nameof(OpenDNDConfig.DbConnection));
 
             services.AddCors();
-            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
             
             // configures IIS out-of-proc settings (see https://github.com/aspnet/AspNetCore/issues/14882)
             services.Configure<IISOptions>(iis =>
@@ -91,6 +92,13 @@ namespace OpenDND
 
             // Add anti-forgery tokens
             services.AddAntiforgery(options => { options.HeaderName = "X-XSRF-TOKEN"; });
+            
+            services.AddMvc(option =>
+                {
+                    option.EnableEndpointRouting = false;
+                    option.Filters.AddService(typeof(AntiForgeryController));
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             // Add response compression
             services.AddResponseCompression();

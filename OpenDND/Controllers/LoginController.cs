@@ -16,7 +16,7 @@ namespace OpenDND.Controllers
     }
     
     [ValidateAntiForgeryToken]
-    //[Authorize]
+    [Authorize]
     [Route("~/api")]
     public class LoginController : ControllerBase, ILoginController
     {
@@ -29,6 +29,7 @@ namespace OpenDND.Controllers
             UserService = userService;
         }
         
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User user)
         {
