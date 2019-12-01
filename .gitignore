@@ -34,3 +34,5 @@ OpenDND.Services.Tests/bin/
 OpenDND.Tests/bin/
 
 OpenDND.Tests/obj/
+
+OpenDND/appsettings.json

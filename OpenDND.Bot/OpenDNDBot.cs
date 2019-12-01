@@ -23,7 +23,7 @@ namespace OpenDND.DiscordBot
 {
     public sealed class OpenDndBot : BackgroundService
     {
-        private readonly DiscordSocketClient _client;
+        private readonly DiscordSocketClient _discordClient;
         private readonly DiscordRestClient _restClient;
         private readonly CommandService _commands;
         private readonly IServiceProvider _provider;
@@ -33,7 +33,8 @@ namespace OpenDND.DiscordBot
         private readonly IHostingEnvironment _env;
         private IServiceScope _scope;
         private readonly ConcurrentDictionary<ICommandContext, IServiceScope> _commandScopes = new ConcurrentDictionary<ICommandContext, IServiceScope>();
-
+        private ILogger<OpenDndBot> Log { get; }
+        
         public OpenDndBot(
             DiscordSocketClient discordClient,
             DiscordRestClient restClient,
@@ -45,7 +46,7 @@ namespace OpenDND.DiscordBot
             ILogger<OpenDndBot> logger,
             IHostingEnvironment env)
         {
-            _client = discordClient ?? throw new ArgumentNullException(nameof(discordClient));
+            _discordClient = discordClient ?? throw new ArgumentNullException(nameof(discordClient));
             _restClient = restClient ?? throw new ArgumentNullException(nameof(restClient));
             _config = openDndConfig?.Value ?? throw new ArgumentNullException(nameof(openDndConfig));
             _commands = commandService ?? throw new ArgumentNullException(nameof(commandService));
@@ -55,8 +56,6 @@ namespace OpenDND.DiscordBot
             Log = logger ?? throw new ArgumentNullException(nameof(logger));
             _env = env;
         }
-
-        private ILogger<OpenDndBot> Log { get; }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -73,10 +72,10 @@ namespace OpenDND.DiscordBot
 
                 Log.LogTrace("Registering listeners for Discord client events.");
 
-                _client.LatencyUpdated += OnLatencyUpdated;
-                _client.Disconnected += OnDisconnect;
+                _discordClient.LatencyUpdated += OnLatencyUpdated;
+                _discordClient.Disconnected += OnDisconnect;
 
-                _client.Log += _serilogAdapter.HandleLog;
+                _discordClient.Log += _serilogAdapter.HandleLog;
                 _restClient.Log += _serilogAdapter.HandleLog;
                 _commands.Log += _serilogAdapter.HandleLog;
 
@@ -84,6 +83,7 @@ namespace OpenDND.DiscordBot
                 // shutting down or being disposed.
                 stoppingToken.Register(OnStopping);
 
+                // Database migrations
                 Log.LogInformation("Running database migrations.");
                 scope.ServiceProvider.GetRequiredService<OpenDNDContext>()
                     .Database.Migrate();
@@ -127,7 +127,7 @@ namespace OpenDND.DiscordBot
                     OnStopping();
 
                     Log.LogInformation("Logging out of Discord.");
-                    await _client.LogoutAsync();
+                    await _discordClient.LogoutAsync();
                 }
                 finally
                 {
@@ -142,10 +142,10 @@ namespace OpenDND.DiscordBot
             {
                 Log.LogInformation("Stopping background service.");
 
-                _client.Disconnected -= OnDisconnect;
-                _client.LatencyUpdated -= OnLatencyUpdated;
+                _discordClient.Disconnected -= OnDisconnect;
+                _discordClient.LatencyUpdated -= OnLatencyUpdated;
 
-                _client.Log -= _serilogAdapter.HandleLog;
+                _discordClient.Log -= _serilogAdapter.HandleLog;
                 _commands.Log -= _serilogAdapter.HandleLog;
                 _restClient.Log -= _serilogAdapter.HandleLog;
 
@@ -185,7 +185,7 @@ namespace OpenDND.DiscordBot
             finally
             {
                 _scope?.Dispose();
-                _client.Dispose();
+                _discordClient.Dispose();
                 _restClient.Dispose();
             }
         }
@@ -194,18 +194,18 @@ namespace OpenDND.DiscordBot
         {
             try
             {
-                _client.Ready += OnClientReady;
+                _discordClient.Ready += OnClientReady;
 
                 cancellationToken.ThrowIfCancellationRequested();
 
-                await _client.LoginAsync(TokenType.Bot, _config.DiscordToken);
-                await _client.StartAsync();
+                await _discordClient.LoginAsync(TokenType.Bot, _config.DiscordToken);
+                await _discordClient.StartAsync();
 
                 await _restClient.LoginAsync(TokenType.Bot, _config.DiscordToken);
             }
             catch (Exception)
             {
-                _client.Ready -= OnClientReady;
+                _discordClient.Ready -= OnClientReady;
 
                 throw;
             }
@@ -213,8 +213,8 @@ namespace OpenDND.DiscordBot
             async Task OnClientReady()
             {
                 Log.LogTrace("Discord client is ready. Setting game status.");
-                _client.Ready -= OnClientReady;
-                await _client.SetGameAsync(_config.WebsiteBaseUrl);
+                _discordClient.Ready -= OnClientReady;
+                await _discordClient.SetGameAsync(_config.WebsiteBaseUrl);
             }
         }
     }

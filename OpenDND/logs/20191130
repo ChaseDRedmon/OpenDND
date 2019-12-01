@@ -1,0 +1,174 @@
+2019-11-30 12:31:23.253 -05:00 [DBG] Hosting starting <1>
+2019-11-30 12:31:23.382 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"] <1>
+2019-11-30 12:31:23.392 -05:00 [DBG] Initializing Razor view compiler with no compiled views. <1>
+2019-11-30 12:31:23.540 -05:00 [INF] Starting server on port 8080... <1>
+2019-11-30 12:31:23.655 -05:00 [DBG] Reading data from file 'C:\Users\redmo\Documents\Coding\C#\Personal\VueJS 3\OpenDND\OpenDND\dataprotection\key-62ee9f26-9561-446c-a459-a69ec85e5370.xml'. <1>
+2019-11-30 12:31:23.671 -05:00 [DBG] Found key {62ee9f26-9561-446c-a459-a69ec85e5370}. <1>
+2019-11-30 12:31:23.681 -05:00 [DBG] Considering key {62ee9f26-9561-446c-a459-a69ec85e5370} with expiration date 2020-02-26 16:13:01Z as default key. <1>
+2019-11-30 12:31:23.685 -05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 <1>
+2019-11-30 12:31:23.686 -05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC. <1>
+2019-11-30 12:31:23.688 -05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC. <1>
+2019-11-30 12:31:23.689 -05:00 [DBG] Using key {62ee9f26-9561-446c-a459-a69ec85e5370} as the default key. <1>
+2019-11-30 12:31:23.689 -05:00 [DBG] Key ring with default key {62ee9f26-9561-446c-a459-a69ec85e5370} was loaded during application startup. <1>
+2019-11-30 12:31:23.691 -05:00 [DBG] Failed to locate the development https certificate at 'null'. <1>
+2019-11-30 12:31:23.725 -05:00 [DBG] Hosting started <1>
+2019-11-30 12:31:23.725 -05:00 [DBG] Loaded hosting startup assembly OpenDND <1>
+2019-11-30 12:31:24.192 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" received FIN. <5>
+2019-11-30 12:31:24.199 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" accepted. <5>
+2019-11-30 12:31:24.200 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" started. <10>
+2019-11-30 12:31:24.204 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" sending FIN because: "The client closed the connection." <10>
+2019-11-30 12:31:24.205 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" disconnecting. <10>
+2019-11-30 12:31:24.208 -05:00 [DBG] Connection id "0HLRLNCFLVIQ2" stopped. <10>
+2019-11-30 12:31:24.378 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" accepted. <5>
+2019-11-30 12:31:24.378 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" started. <13>
+2019-11-30 12:31:24.389 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   <13>
+2019-11-30 12:31:24.391 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed. <13>
+2019-11-30 12:31:24.392 -05:00 [DBG] The request path / does not match a supported file type <13>
+2019-11-30 12:31:24.455 -05:00 [DBG] Request did not match any routes <13>
+2019-11-30 12:31:24.461 -05:00 [DBG] No candidates found for the request path '/' <13>
+2019-11-30 12:31:24.461 -05:00 [DBG] Request did not match any endpoints <13>
+2019-11-30 12:31:24.470 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <13>
+2019-11-30 12:31:24.471 -05:00 [DBG] Request did not match any routes <13>
+2019-11-30 12:31:31.403 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" completed keep alive response. <6>
+2019-11-30 12:31:31.404 -05:00 [INF] Request finished in 7015.3653ms 200 text/html; charset=UTF-8 <6>
+2019-11-30 12:31:31.425 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/app.js   <12>
+2019-11-30 12:31:31.433 -05:00 [DBG] The request path /app.js does not match an existing file <12>
+2019-11-30 12:31:31.434 -05:00 [DBG] Request did not match any routes <12>
+2019-11-30 12:31:31.434 -05:00 [DBG] No candidates found for the request path '/app.js' <12>
+2019-11-30 12:31:31.434 -05:00 [DBG] Request did not match any endpoints <12>
+2019-11-30 12:31:31.434 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <12>
+2019-11-30 12:31:31.434 -05:00 [DBG] Request successfully matched the route with name 'default' and template '{controller}/{action=Index}/{id?}' <12>
+2019-11-30 12:31:31.435 -05:00 [DBG] No actions matched the current request. Route values: ["controller=app.js","action=Index"] <12>
+2019-11-30 12:31:31.435 -05:00 [DBG] No actions matched the current request. Route values: ["controller=app.js","action=Index"] <12>
+2019-11-30 12:31:31.435 -05:00 [DBG] Request did not match any routes <12>
+2019-11-30 12:31:31.469 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" completed keep alive response. <12>
+2019-11-30 12:31:31.469 -05:00 [INF] Request finished in 44.630900000000004ms 200 application/javascript; charset=UTF-8 <12>
+2019-11-30 12:31:31.664 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logo.png   <11>
+2019-11-30 12:31:31.664 -05:00 [DBG] The request path /img/logo.png does not match an existing file <11>
+2019-11-30 12:31:31.664 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:31.664 -05:00 [DBG] No candidates found for the request path '/img/logo.png' <11>
+2019-11-30 12:31:31.664 -05:00 [DBG] Request did not match any endpoints <11>
+2019-11-30 12:31:31.665 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <11>
+2019-11-30 12:31:31.665 -05:00 [DBG] Request successfully matched the route with name 'default' and template '{controller}/{action=Index}/{id?}' <11>
+2019-11-30 12:31:31.665 -05:00 [DBG] No actions matched the current request. Route values: ["controller=img","action=logo.png"] <11>
+2019-11-30 12:31:31.665 -05:00 [DBG] No actions matched the current request. Route values: ["controller=img","action=logo.png"] <11>
+2019-11-30 12:31:31.665 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:31.666 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" completed keep alive response. <5>
+2019-11-30 12:31:31.666 -05:00 [INF] Request finished in 2.4462ms 200 image/png; charset=UTF-8 <5>
+2019-11-30 12:31:31.684 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/info?t=1575135091671   <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] The request path /sockjs-node/info does not match a supported file type <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] Request did not match any routes <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] No candidates found for the request path '/sockjs-node/info' <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] Request did not match any endpoints <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] Request successfully matched the route with name 'default' and template '{controller}/{action=Index}/{id?}' <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] No actions matched the current request. Route values: ["controller=sockjs-node","action=info"] <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] No actions matched the current request. Route values: ["controller=sockjs-node","action=info"] <14>
+2019-11-30 12:31:31.685 -05:00 [DBG] Request did not match any routes <14>
+2019-11-30 12:31:31.688 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" completed keep alive response. <5>
+2019-11-30 12:31:31.688 -05:00 [INF] Request finished in 3.2419000000000002ms 200 application/json; charset=UTF-8 <5>
+2019-11-30 12:31:31.705 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   <12>
+2019-11-30 12:31:31.706 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" received FIN. <14>
+2019-11-30 12:31:31.706 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" sending FIN because: "The client closed the connection." <10>
+2019-11-30 12:31:31.706 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" disconnecting. <10>
+2019-11-30 12:31:31.713 -05:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\redmo\Documents\Coding\C#\Personal\VueJS 3\OpenDND\OpenDND\wwwroot\favicon.ico' <10>
+2019-11-30 12:31:31.713 -05:00 [INF] Request finished in 8.3717ms 200 image/x-icon <10>
+2019-11-30 12:31:31.715 -05:00 [DBG] Connection id "0HLRLNCFLVIQ3" stopped. <10>
+2019-11-30 12:31:31.811 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" accepted. <5>
+2019-11-30 12:31:31.811 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" started. <11>
+2019-11-30 12:31:31.812 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/627/cqpsv5nt/websocket   <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] The request path /sockjs-node/627/cqpsv5nt/websocket does not match a supported file type <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] No candidates found for the request path '/sockjs-node/627/cqpsv5nt/websocket' <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] Request did not match any endpoints <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <11>
+2019-11-30 12:31:31.812 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:32.410 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" accepted. <5>
+2019-11-30 12:31:32.410 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" started. <11>
+2019-11-30 12:31:32.411 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/sockjs-node/627/0xl24ygy/xhr_streaming?t=1575135092345  0 <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] POST requests are not supported <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] No candidates found for the request path '/sockjs-node/627/0xl24ygy/xhr_streaming' <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] Request did not match any endpoints <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <11>
+2019-11-30 12:31:32.411 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:31:33.847 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" received FIN. <15>
+2019-11-30 12:31:33.847 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" sending FIN because: "The client closed the connection." <15>
+2019-11-30 12:31:33.847 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" disconnecting. <15>
+2019-11-30 12:31:33.854 -05:00 [INF] Request finished in 2042.5849ms 101  <20>
+2019-11-30 12:31:33.854 -05:00 [DBG] Connection id "0HLRLNCFLVIQ4" stopped. <20>
+2019-11-30 12:32:11.373 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" received FIN. <15>
+2019-11-30 12:32:11.373 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" sending FIN because: "The client closed the connection." <15>
+2019-11-30 12:32:11.373 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" disconnecting. <15>
+2019-11-30 12:32:11.389 -05:00 [INF] Request finished in 38978.644400000005ms 200 application/javascript; charset=UTF-8 <21>
+2019-11-30 12:32:11.389 -05:00 [DBG] Connection id "0HLRLNCFLVIQ5" stopped. <21>
+2019-11-30 12:32:11.398 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" accepted. <21>
+2019-11-30 12:32:11.398 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" started. <15>
+2019-11-30 12:32:11.398 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/sockjs-node/627/0xl24ygy/xhr_streaming?t=1575135131377  0 <15>
+2019-11-30 12:32:11.398 -05:00 [DBG] POST requests are not supported <15>
+2019-11-30 12:32:11.398 -05:00 [DBG] Request did not match any routes <15>
+2019-11-30 12:32:11.398 -05:00 [DBG] No candidates found for the request path '/sockjs-node/627/0xl24ygy/xhr_streaming' <15>
+2019-11-30 12:32:11.398 -05:00 [DBG] Request did not match any endpoints <15>
+2019-11-30 12:32:11.399 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <15>
+2019-11-30 12:32:11.399 -05:00 [DBG] Connection id "0HLRLNCFLVIQ7" accepted. <21>
+2019-11-30 12:32:11.399 -05:00 [DBG] Request did not match any routes <15>
+2019-11-30 12:32:11.399 -05:00 [DBG] Connection id "0HLRLNCFLVIQ7" started. <11>
+2019-11-30 12:32:11.399 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   <11>
+2019-11-30 12:32:11.399 -05:00 [DBG] The request path / does not match a supported file type <11>
+2019-11-30 12:32:11.399 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:32:11.399 -05:00 [DBG] No candidates found for the request path '/' <11>
+2019-11-30 12:32:11.399 -05:00 [DBG] Request did not match any endpoints <11>
+2019-11-30 12:32:11.399 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <11>
+2019-11-30 12:32:11.400 -05:00 [DBG] Request did not match any routes <11>
+2019-11-30 12:32:13.412 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" received FIN. <11>
+2019-11-30 12:32:13.412 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" sending FIN because: "The client closed the connection." <11>
+2019-11-30 12:32:13.412 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" disconnecting. <11>
+2019-11-30 12:32:13.413 -05:00 [INF] Request finished in 2014.7679ms 200 application/javascript; charset=UTF-8 <23>
+2019-11-30 12:32:13.413 -05:00 [DBG] Connection id "0HLRLNCFLVIQ6" stopped. <23>
+2019-11-30 12:32:13.417 -05:00 [DBG] Connection id "0HLRLNCFLVIQ7" completed keep alive response. <20>
+2019-11-30 12:32:13.417 -05:00 [INF] Request finished in 2018.2784000000001ms 304  <20>
+2019-11-30 12:32:13.438 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/app.js   <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] The request path /app.js does not match an existing file <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] No candidates found for the request path '/app.js' <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] Request did not match any endpoints <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] Request successfully matched the route with name 'default' and template '{controller}/{action=Index}/{id?}' <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] No actions matched the current request. Route values: ["controller=app.js","action=Index"] <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] No actions matched the current request. Route values: ["controller=app.js","action=Index"] <10>
+2019-11-30 12:32:13.438 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:13.444 -05:00 [DBG] Connection id "0HLRLNCFLVIQ7" completed keep alive response. <24>
+2019-11-30 12:32:13.444 -05:00 [INF] Request finished in 5.7231000000000005ms 304  <24>
+2019-11-30 12:32:13.751 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/info?t=1575135133726   <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] The request path /sockjs-node/info does not match a supported file type <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] No candidates found for the request path '/sockjs-node/info' <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] Request did not match any endpoints <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] Request successfully matched the route with name 'default' and template '{controller}/{action=Index}/{id?}' <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] No actions matched the current request. Route values: ["controller=sockjs-node","action=info"] <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] No actions matched the current request. Route values: ["controller=sockjs-node","action=info"] <10>
+2019-11-30 12:32:13.751 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:13.754 -05:00 [DBG] Connection id "0HLRLNCFLVIQ7" completed keep alive response. <26>
+2019-11-30 12:32:13.754 -05:00 [INF] Request finished in 3.7127000000000003ms 200 application/json; charset=UTF-8 <26>
+2019-11-30 12:32:13.783 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" accepted. <21>
+2019-11-30 12:32:13.783 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" started. <10>
+2019-11-30 12:32:13.783 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/402/el0refvs/websocket   <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] The request path /sockjs-node/402/el0refvs/websocket does not match a supported file type <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] No candidates found for the request path '/sockjs-node/402/el0refvs/websocket' <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] Request did not match any endpoints <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <10>
+2019-11-30 12:32:13.785 -05:00 [DBG] Request did not match any routes <10>
+2019-11-30 12:32:14.486 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/sockjs-node/402/0eltdweu/xhr_streaming?t=1575135134471  0 <14>
+2019-11-30 12:32:14.486 -05:00 [DBG] POST requests are not supported <14>
+2019-11-30 12:32:14.486 -05:00 [DBG] Request did not match any routes <14>
+2019-11-30 12:32:14.486 -05:00 [DBG] No candidates found for the request path '/sockjs-node/402/0eltdweu/xhr_streaming' <14>
+2019-11-30 12:32:14.486 -05:00 [DBG] Request did not match any endpoints <14>
+2019-11-30 12:32:14.487 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <14>
+2019-11-30 12:32:14.487 -05:00 [DBG] Request did not match any routes <14>
+2019-11-30 12:32:15.795 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" reset. <15>
+2019-11-30 12:32:15.795 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" sending FIN because: "The client closed the connection." <15>
+2019-11-30 12:32:15.795 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" disconnecting. <15>
+2019-11-30 12:32:15.802 -05:00 [INF] Request finished in 2018.7513000000001ms 101  <24>
+2019-11-30 12:32:15.802 -05:00 [DBG] Connection id "0HLRLNCFLVIQ8" stopped. <24>

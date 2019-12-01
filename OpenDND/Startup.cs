@@ -1,21 +1,25 @@
 using System;
 using System.IO;
-using Microsoft.AspNetCore.Authentication;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using OpenDND.Configuration;
 using OpenDND.Data;
 using OpenDND.Data.Models;
 using OpenDND.Extensions;
-using OpenDND.Services.Handlers;
+using OpenDND.Helpers;
 using VueCliMiddleware;
 
 namespace OpenDND
@@ -32,24 +36,61 @@ namespace OpenDND
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Database connection stirng
+            var connectionString = Configuration.GetValue<string>(nameof(OpenDNDConfig.DbConnection));
+
+            services.AddCors();
+            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
+            // configures IIS out-of-proc settings (see https://github.com/aspnet/AspNetCore/issues/14882)
+            services.Configure<IISOptions>(iis =>
+            {
+                iis.AuthenticationDisplayName = "Windows";
+                iis.AutomaticAuthentication = false;
+            });
+
+            // configures IIS in-proc settings
+            services.Configure<IISServerOptions>(iis =>
+            {
+                iis.AuthenticationDisplayName = "Windows";
+                iis.AutomaticAuthentication = false;
+            });
+            
             // Add our config class to our configuration
             services.Configure<OpenDNDConfig>(Configuration);
 
             // Create and persist our data protection keys to a directory
             services.AddDataProtection()
                 .PersistKeysToFileSystem(new DirectoryInfo(@"dataprotection"));
+
+            // configure strongly typed settings objects
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            // configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             
-            // Add cookie authentication
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+            services.AddAuthentication(x =>
                 {
-                    options.LoginPath = "/api/unauthorized";
-                    //options.LogoutPath = "/logout";
-                    options.ExpireTimeSpan = new TimeSpan(7, 0, 0, 0);
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
                 });
 
             // Add anti-forgery tokens
-            services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
+            services.AddAntiforgery(options => { options.HeaderName = "X-XSRF-TOKEN"; });
 
             // Add response compression
             services.AddResponseCompression();
@@ -65,12 +106,11 @@ namespace OpenDND
             // Create our database service context and tell the application to use SQL Server 
             services.AddDbContext<OpenDNDContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetValue<string>(nameof(OpenDNDConfig.DbConnection)));
+                options.UseNpgsql(connectionString);
             });
 
+            // add core application servers to DI collection
             services.AddOpenDNDServices();
-            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -82,6 +122,13 @@ namespace OpenDND
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            var options = new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            };
+
+            app.UseForwardedHeaders(options);
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -91,17 +138,22 @@ namespace OpenDND
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
-
-            app.UseAuthentication();
+                .AllowAnyHeader());
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            
+            app.UseMvc();
+            app.UseRouting();
+            
+            app.UseCookiePolicy();
+            
+            app.UseAuthentication();
+            
             //app.UseHttpsRedirection();
 
             app.UseMvc(routes =>
@@ -110,8 +162,6 @@ namespace OpenDND
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
-            
-            app.UseMvc();
             
             /*app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
             {

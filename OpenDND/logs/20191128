@@ -1,0 +1,39 @@
+2019-11-28 11:13:01.023 -05:00 [DBG] Hosting starting <1>
+2019-11-28 11:13:01.104 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"] <1>
+2019-11-28 11:13:01.117 -05:00 [DBG] Initializing Razor view compiler with no compiled views. <1>
+2019-11-28 11:13:01.262 -05:00 [INF] Starting server on port 8080... <1>
+2019-11-28 11:13:01.306 -05:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation. <1>
+2019-11-28 11:13:01.306 -05:00 [DBG] Policy resolution states that a new key should be added to the key ring. <1>
+2019-11-28 11:13:01.308 -05:00 [INF] Creating key {62ee9f26-9561-446c-a459-a69ec85e5370} with creation date 2019-11-28 16:13:01Z, activation date 2019-11-28 16:13:01Z, and expiration date 2020-02-26 16:13:01Z. <1>
+2019-11-28 11:13:01.313 -05:00 [DBG] Descriptor deserializer type for key {62ee9f26-9561-446c-a459-a69ec85e5370} is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. <1>
+2019-11-28 11:13:01.316 -05:00 [DBG] No key escrow sink found. Not writing key {62ee9f26-9561-446c-a459-a69ec85e5370} to escrow. <1>
+2019-11-28 11:13:01.316 -05:00 [WRN] No XML encryptor configured. Key {62ee9f26-9561-446c-a459-a69ec85e5370} may be persisted to storage in unencrypted form. <1>
+2019-11-28 11:13:01.319 -05:00 [INF] Writing data to file 'C:\Users\redmo\Documents\Coding\C#\Personal\VueJS 3\OpenDND\OpenDND\dataprotection\key-62ee9f26-9561-446c-a459-a69ec85e5370.xml'. <1>
+2019-11-28 11:13:01.320 -05:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation. <1>
+2019-11-28 11:13:01.320 -05:00 [DBG] Reading data from file 'C:\Users\redmo\Documents\Coding\C#\Personal\VueJS 3\OpenDND\OpenDND\dataprotection\key-62ee9f26-9561-446c-a459-a69ec85e5370.xml'. <1>
+2019-11-28 11:13:01.323 -05:00 [DBG] Found key {62ee9f26-9561-446c-a459-a69ec85e5370}. <1>
+2019-11-28 11:13:01.325 -05:00 [DBG] Considering key {62ee9f26-9561-446c-a459-a69ec85e5370} with expiration date 2020-02-26 16:13:01Z as default key. <1>
+2019-11-28 11:13:01.330 -05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 <1>
+2019-11-28 11:13:01.334 -05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC. <1>
+2019-11-28 11:13:01.335 -05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC. <1>
+2019-11-28 11:13:01.336 -05:00 [DBG] Using key {62ee9f26-9561-446c-a459-a69ec85e5370} as the default key. <1>
+2019-11-28 11:13:01.337 -05:00 [DBG] Key ring with default key {62ee9f26-9561-446c-a459-a69ec85e5370} was loaded during application startup. <1>
+2019-11-28 11:13:01.338 -05:00 [DBG] Failed to locate the development https certificate at 'null'. <1>
+2019-11-28 11:13:01.352 -05:00 [DBG] Hosting started <1>
+2019-11-28 11:13:01.352 -05:00 [DBG] Loaded hosting startup assembly OpenDND <1>
+2019-11-28 11:13:01.703 -05:00 [DBG] Connection id "0HLRK3NBQB21B" received FIN. <4>
+2019-11-28 11:13:01.708 -05:00 [DBG] Connection id "0HLRK3NBQB21B" accepted. <4>
+2019-11-28 11:13:01.708 -05:00 [DBG] Connection id "0HLRK3NBQB21B" started. <14>
+2019-11-28 11:13:01.711 -05:00 [DBG] Connection id "0HLRK3NBQB21B" sending FIN because: "The client closed the connection." <14>
+2019-11-28 11:13:01.712 -05:00 [DBG] Connection id "0HLRK3NBQB21B" disconnecting. <14>
+2019-11-28 11:13:01.715 -05:00 [DBG] Connection id "0HLRK3NBQB21B" stopped. <14>
+2019-11-28 11:13:01.795 -05:00 [DBG] Connection id "0HLRK3NBQB21C" accepted. <4>
+2019-11-28 11:13:01.795 -05:00 [DBG] Connection id "0HLRK3NBQB21C" started. <14>
+2019-11-28 11:13:01.806 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   <14>
+2019-11-28 11:13:01.806 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed. <14>
+2019-11-28 11:13:01.851 -05:00 [DBG] Request did not match any routes <14>
+2019-11-28 11:13:01.855 -05:00 [DBG] No candidates found for the request path '/' <14>
+2019-11-28 11:13:01.855 -05:00 [DBG] Request did not match any endpoints <14>
+2019-11-28 11:13:01.861 -05:00 [DBG] AuthenticationScheme: Cookies was not authenticated. <14>
+2019-11-28 11:13:01.862 -05:00 [DBG] The request path / does not match a supported file type <14>
+2019-11-28 11:13:01.863 -05:00 [DBG] Request did not match any routes <14>

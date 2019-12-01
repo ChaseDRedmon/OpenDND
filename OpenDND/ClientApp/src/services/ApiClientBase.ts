@@ -1,10 +1,9 @@
-import Axios from 'axios';
+import Axios from 'axios'
 
-const client = Axios.create
-({
+const Client = Axios.create({
   baseURL: '/api/',
   timeout: 5000,
-  withCredentials: true,
-});
+  withCredentials: true
+})
 
-export default client;
+export default Client
