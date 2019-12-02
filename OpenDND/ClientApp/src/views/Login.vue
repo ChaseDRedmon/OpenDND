@@ -1,43 +1,44 @@
 <template>
-  <div class="body">
-    <!-- Form Header -->
-    <div class="panel">
-      <h2>Login</h2>
-      <p>Please enter your email and password.</p>
-    </div>
+  <v-container fluid fill-height>
+    <v-layout align-center justify-center>
+      <v-flex>
+        <v-layout align-center justify-center>
+          <v-card class="elevation-12" width="400" >
+            <v-toolbar color="primary" dark flat>
+              <v-toolbar-title>Login form</v-toolbar-title>
+            </v-toolbar>
+            <v-spacer></v-spacer>
+            <v-card-text>
+              <v-form v-on:submit.prevent>
+                <v-text-field
+                  label="Login"
+                  name="login"
+                  type="text"
+                ></v-text-field>
 
-    <!-- Input Form -->
-    <form v-on:submit.prevent>
-      <!-- Username Input -->
-      <fieldset class="form-group">
-        <label>
-          <input
-            class="form-control form-control-lg"
-            type="text"
-            v-model="user.email"
-            placeholder="User ID"
-            required/>
-        </label>
-      </fieldset>
+                <v-text-field
+                  id="password"
+                  label="Password"
+                  name="password"
+                  type="password"
+                ></v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-spacer></v-spacer>
+            <v-divider></v-divider>
+            <v-card-actions>
+              <router-link to="/register">
+                <v-btn color="success">Register</v-btn>
+              </router-link>
+              <v-spacer></v-spacer>
 
-      <!-- Password Input -->
-      <fieldset class="form-group">
-        <label>
-          <input
-            class="form-control form-control-lg"
-            type="text"
-            v-model="user.password"
-            placeholder="Password"
-            required/>
-        </label>
-      </fieldset>
-
-      <!-- Login Button with click event -->
-      <button type="submit" class="btn btn-primary" @click="login">
-        Login
-      </button>
-    </form>
-  </div>
+              <v-btn color="info" @click="login">Login</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

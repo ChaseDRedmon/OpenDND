@@ -1,56 +1,39 @@
 <template>
-  <div class="body">
-    <!-- Form Header -->
-    <div class="panel">
-      <h2>Sign up</h2>
-      <p>Please enter your email and password.</p>
-    </div>
+  <v-container fluid fill-height>
+    <v-layout align-center justify-center>
+      <v-flex>
+        <v-layout align-center justify-center>
+          <v-card class="elevation-12" width="400" >
+            <v-toolbar color="primary" dark flat>
+              <v-toolbar-title>Register</v-toolbar-title>
+            </v-toolbar>
+            <v-spacer></v-spacer>
+            <v-card-text>
+              <v-form>
+                <v-text-field
+                  label="Email"
+                  name="email"
+                  type="text"
+                ></v-text-field>
 
-    <!-- Input Form -->
-    <form v-on:submit.prevent>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <fieldset class="form-group" id="input-group-4" label="Email: " label-for="input-4">
-            <input id="input-4"
-                   class="form-control"
-                   type="text"
-                   v-model="user.email"
-                   placeholder="User ID"
-            />
-          </fieldset>
-        </div>
-        <div class="form-group col-md-4">
-          <fieldset class="form-group" id="input-group-5" label="Password: " label-for="input-5">
-            <input id="input-5"
-                   class="form-control"
-                   type="text"
-                   v-model="user.password"
-                   placeholder="Password"
-            />
-          </fieldset>
-        </div>
-        <div class="form-group col-md-4">
-          <fieldset class="form-group" id="input-group-6" label="Confirm Password " label-for="input-6">
-            <input id="input-6"
-                   class="form-control"
-                   type="text"
-                   v-model="user.passwordConfirmation"
-                   placeholder="Confirm Password"
-            />
-          </fieldset>
-        </div>
-      </div>
-
-        <div class="form-group col-md-6">
-          <button type="button"
-                  class="btn btn-primary"
-                  @click="register">
-            Submit
-          </button>
-          <button type="button" class="btn btn-danger">Reset</button>
-        </div>
-    </form>
-  </div>
+                <v-text-field
+                  id="password"
+                  label="Password"
+                  name="password"
+                  type="password"
+                ></v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-spacer></v-spacer>
+            <v-divider></v-divider>
+            <v-card-actions>
+              <v-btn color="success" @click="register">Register</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 import client from '@/services/ApiClientBase'
 import AuthHeader from '@/helpers/authHeader'
-import {AxiosPromise, AxiosResponse} from "axios";
+import { AxiosPromise, AxiosResponse } from 'axios'
 
 export default class UserService {
   // Submit an HTTP POST request to the backend asp.net core application server
@@ -76,19 +76,16 @@ export default class UserService {
   }
 
   public static async HandleResponse (response: AxiosResponse) {
-
-    if(response.status === 401)
-    {
+    if (response.status === 401) {
       this.Logout()
       location.reload()
     }
 
-    if (response.status != 200)
-    {
-      const error = (response.data && response.data.message) || response.statusText;
+    if (response.status != 200) {
+      const error = (response.data && response.data.message) || response.statusText
       return Promise.reject(error)
     }
 
-    return response.data;
+    return response.data
   }
 }

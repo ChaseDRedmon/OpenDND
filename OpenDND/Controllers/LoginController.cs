@@ -15,8 +15,8 @@ namespace OpenDND.Controllers
         Task<IActionResult> Login([FromBody] User user);
     }
     
-    [ValidateAntiForgeryToken]
-    [Authorize]
+    //[ValidateAntiForgeryToken]
+    //[Authorize]
     [Route("~/api")]
     public class LoginController : ControllerBase, ILoginController
     {

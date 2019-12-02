@@ -36,3 +36,5 @@ OpenDND.Tests/bin/
 OpenDND.Tests/obj/
 
 OpenDND/appsettings.json
+
+OpenDND/logs/
