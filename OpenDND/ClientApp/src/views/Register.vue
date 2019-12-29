@@ -38,6 +38,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import UserService from '@/services/UserService'
 
 export default {
   data () {
@@ -58,7 +59,8 @@ export default {
     register: async function () {
       let email = this.user.email
       let password = this.user.password
-      this.$store.dispatch('Authentication', { email, password })
+
+      await UserService.Register({ email, password })
         .then(() => this.$router.push('/'))
         .catch(err => console.log(err))
     }

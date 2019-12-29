@@ -44,7 +44,7 @@
 <script>
 
 import { mapActions, mapState } from 'vuex'
-import UserService from "@/services/UserService";
+import UserService from '@/services/UserService'
 
 export default {
   data () {
@@ -62,14 +62,14 @@ export default {
         },
   created () {
     // reset login status
-    this.logout()
+    UserService.Logout()
   },
   methods: {
     ...mapActions('account', ['login', 'logout']),
     login: async function () {
-      let email = this.user.email;
-      let password = this.user.password;
-        await UserService.Login(email, password)
+      let email = this.user.email
+      let password = this.user.password
+      await UserService.Login(email, password)
     }
   }
 }

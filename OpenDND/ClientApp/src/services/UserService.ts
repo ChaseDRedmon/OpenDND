@@ -13,7 +13,7 @@ export default class UserService {
       url: 'login',
       xsrfHeaderName: 'X-XSRF-TOKEN',
       headers: { 'Content-Type': 'application/json' },
-      data: { username, password }
+      data: JSON.stringify({ username, password })
     })
       .then(this.HandleResponse)
       .then(function (user) {
@@ -81,7 +81,7 @@ export default class UserService {
       location.reload()
     }
 
-    if (response.status != 200) {
+    if (response.status !== 200) {
       const error = (response.data && response.data.message) || response.statusText
       return Promise.reject(error)
     }

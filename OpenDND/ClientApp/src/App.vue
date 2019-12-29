@@ -22,20 +22,20 @@
 </template>
 
 <script>
-    export default {
-        name: "App",
-        data() {
-            return {
-                title: 'OpenDND',
-                items: [
-                    {title: 'Home', icon: 'home', link: '/'},
-                    {title: 'About', icon: 'home', link: '/about'},
-                    {title: 'Login', icon: 'get_app', link: '/login'},
-                    {title: 'Register', icon: 'get_app', link: '/register'},
-                ]
-            };
-        }
-    };
+export default {
+  name: 'App',
+  data () {
+    return {
+      title: 'OpenDND',
+      items: [
+        { title: 'Home', icon: 'home', link: '/' },
+        { title: 'About', icon: 'home', link: '/about' },
+        { title: 'Login', icon: 'get_app', link: '/login' },
+        { title: 'Register', icon: 'get_app', link: '/register' }
+      ]
+    }
+  }
+}
 </script>
 
 <style>
