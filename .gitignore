@@ -38,3 +38,5 @@ OpenDND.Tests/obj/
 OpenDND/appsettings.json
 
 OpenDND/logs/
+
+OpenDND/dataprotection/
