@@ -17,4 +17,8 @@
       <ProjectReference Include="..\OpenDND.Services\OpenDND.Services.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Modules" />
+    </ItemGroup>
+
 </Project>

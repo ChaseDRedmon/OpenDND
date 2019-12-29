@@ -119,7 +119,7 @@ namespace OpenDND
             // add core application servers to DI collection
             services.AddOpenDNDServices();
 
-            // In production, the React files will be served from this directory
+            // In production, the vue files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
