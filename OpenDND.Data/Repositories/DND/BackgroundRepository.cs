@@ -1,7 +1,9 @@
 namespace OpenDND.Data.Repositories.DND
 {
-    public class BackgroundRepository
+    public class BackgroundRepository : RepositoryBase
     {
-        
+        public BackgroundRepository(OpenDNDContext openDndContext) : base(openDndContext)
+        {
+        }
     }
 }

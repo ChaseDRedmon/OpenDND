@@ -17,18 +17,18 @@ namespace OpenDND.Services.Core
     
     public class RollDiceService
     {
-        private static Random rand;
+        private static Random _random;
 
         public RollDiceService()
         {
-            rand = new Random();
+            _random = new Random();
         }
         
         // Todo: Create methods for rolling single die rolls and rolling multiple dies at the same time
         public int Roll(MaximumDieValues die)
         {
             var max = (int) die;
-            var roll = rand.Next(1, max + 1);
+            var roll = _random.Next(1, max + 1);
             return roll;
         }
     }

@@ -31,6 +31,13 @@ namespace OpenDND.Services.Core
             _appSettings = appSettings.Value;
         }
 
+        public async Task<bool> Register(string username, string password)
+        {
+            
+            
+            return true;
+        }
+
         public async Task<User> Authenticate(string username, string password)
         {
             var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);

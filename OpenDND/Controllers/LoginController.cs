@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using OpenDND.Models;
 using OpenDND.Services.Core;
 using Serilog;
-using IAuthorizationService = OpenDND.Services.Core.IAuthorizationService;
 
 namespace OpenDND.Controllers
 {

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenDND.Models;
 using Serilog;
-using IAuthorizationService = OpenDND.Services.Core.IAuthorizationService;
 
 namespace OpenDND.Controllers
 {
@@ -16,6 +15,7 @@ namespace OpenDND.Controllers
     [Route("~/api")]
     public class RegisterController : Controller, IRegisterController
     {
+        // TODO: Fix authorization service here
         internal protected IAuthorizationService AuthorizationService { get; }
 
         public RegisterController(IAuthorizationService authorizationService)
@@ -28,6 +28,10 @@ namespace OpenDND.Controllers
         public async Task<IActionResult> Register(User user)
         {
             Log.Information("!!!!!!!!!Received credentials request!!!!!!!!");
+            
+            
+            
+            
             return Accepted();
         }
     }

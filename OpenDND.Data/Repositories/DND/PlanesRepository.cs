@@ -1,7 +1,9 @@
-namespace OpenDND.Data.Repositories
+namespace OpenDND.Data.Repositories.DND
 {
-    public class PlanesRepository
+    public class PlanesRepository : RepositoryBase
     {
-        
+        public PlanesRepository(OpenDNDContext openDndContext) : base(openDndContext)
+        {
+        }
     }
 }
